@@ -1,0 +1,97 @@
+<div className="min-h-screen bg-black text-white px-6 py-10 font-sans"> <div className="max-w-5xl mx-auto space-y-10"> {/* Cabeçalho */} <header className="text-center space-y-3"> <h1 className="text-5xl font-extrabold text-[#E50914]">Netflix Revenda Oficial</h1> <p className="text-gray-300 text-lg">Compre sua conta legal com entrega automática</p> </header>
+
+{/* Imagem de promoção Netflix */}
+    <section className="rounded-xl overflow-hidden shadow-xl">
+      <img
+        src="https://assets.nflxext.com/ffe/siteui/vlv3/e34263f6-2e91-4ae3-888e-126032dfc77f/2e476f89-b6e4-4224-9a2a-214420d0f36d/MZ-en-20230731-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        alt="Promo Netflix"
+        className="w-full h-64 object-cover"
+      />
+    </section>
+
+    {/* Quadro de preços */}
+    <section className="bg-[#1F1F1F] rounded-xl p-6 border border-[#E50914] space-y-4">
+      <h2 className="text-2xl font-bold text-[#E50914]">Planos Disponíveis</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-[#262626] p-4 rounded-xl text-center shadow-lg">
+          <h3 className="text-xl font-bold">Premium</h3>
+          <p className="text-gray-400">Duração: 1 Mês</p>
+          <p className="text-[#E50914] text-2xl font-bold mt-2">200MT</p>
+        </div>
+        <div className="bg-[#262626] p-4 rounded-xl text-center shadow-lg">
+          <h3 className="text-xl font-bold">Ultra HD</h3>
+          <p className="text-gray-400">Duração: 1 Mês</p>
+          <p className="text-[#E50914] text-2xl font-bold mt-2">400MT</p>
+        </div>
+      </div>
+    </section>
+
+    {/* Formulário de compra */}
+    <main>
+      <div className="bg-[#1F1F1F] border border-[#E50914] shadow-xl rounded-2xl p-8 space-y-6">
+        <div className="space-y-2">
+          <label className="text-md font-medium text-[#E50914] flex items-center gap-2">
+            <Mail className="w-5 h-5" /> Seu e-mail para entrega
+          </label>
+          <Input
+            className="rounded-lg border-gray-600 bg-neutral-800 text-white placeholder-gray-500"
+            type="email"
+            placeholder="exemplo@dominio.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <Button
+          className="w-full py-3 rounded-xl bg-[#E50914] hover:bg-red-700 text-lg font-semibold"
+          onClick={handlePurchase}
+          disabled={!email || loading}
+        >
+          {loading ? "Processando pagamento..." : "Comprar Conta Netflix"}
+        </Button>
+
+        {receivedAccount && (
+          <div className="bg-green-900 text-green-100 p-5 rounded-xl border border-green-500 mt-6">
+            <p className="flex items-center font-semibold text-lg">
+              <CheckCircle className="w-6 h-6 mr-2" /> Conta entregue com sucesso:
+            </p>
+            <div className="mt-4 space-y-2">
+              <p className="flex items-center text-base font-mono">
+                <Mail className="w-5 h-5 mr-2 text-green-200" /> {receivedAccount.email}
+              </p>
+              <p className="flex items-center text-base font-mono">
+                <Lock className="w-5 h-5 mr-2 text-green-200" /> {receivedAccount.password}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Contato por WhatsApp e email */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <a
+            href="https://wa.me/258848649797"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-lg font-semibold"
+          >
+            <Phone className="w-5 h-5" /> Comprar via WhatsApp
+          </a>
+
+          <a
+            href="mailto:netmovie450@gmail.com"
+            className="inline-flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl text-lg font-semibold"
+          >
+            <Info className="w-5 h-5" /> Fale conosco por email
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer className="text-center text-gray-500 text-sm border-t border-[#333] pt-6">
+      © {new Date().getFullYear()} Netflix Revenda Oficial — Todos os direitos reservados.
+    </footer>
+  </div>
+</div>
+
+); }
+
