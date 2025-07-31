@@ -1,159 +1,199 @@
-<!DOCTYPE html><html lang="pt"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Revenda Oficial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MZ TECH STORE Netflix venda Oficial de Contas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #000;
       color: #fff;
-    }header {
-  text-align: center;
-  padding: 2rem;
-}
+    }
 
-header h1 {
-  color: #E50914;
-  font-size: 3rem;
-}
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
 
-.promo-img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-}
+    header h1 {
+      color: #E50914;
+      font-size: 3rem;
+    }
 
-.planos {
-  background-color: #1F1F1F;
-  border: 1px solid #E50914;
-  border-radius: 10px;
-  padding: 2rem;
-  margin: 2rem;
-}
+    .promo-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
 
-.planos h2 {
-  color: #E50914;
-  margin-bottom: 1rem;
-}
+    .planos {
+      background-color: #1F1F1F;
+      border: 1px solid #E50914;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem;
+    }
 
-.preco {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+    .planos h2 {
+      color: #E50914;
+      margin-bottom: 1rem;
+    }
 
-.card {
-  background-color: #262626;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #000;
-}
+    .preco {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-.card h3 {
-  font-size: 1.5rem;
-}
+    .card {
+      background-color: #262626;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px #000;
+    }
 
-.card p {
-  margin: 0.5rem 0;
-}
+    .card h3 {
+      font-size: 1.5rem;
+    }
 
-.card .valor {
-  color: #E50914;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
+    .card p {
+      margin: 0.5rem 0;
+    }
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
+    .card .valor {
+      color: #E50914;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
 
-.galeria img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
+    .botoes-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      background-color: #E50914;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
 
-.galeria img:hover {
-  transform: scale(1.05);
-}
+    .botoes-link:hover {
+      background-color: #b00610;
+    }
 
-.botoes {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  max-width: 500px;
-  margin: auto;
-}
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
 
-.botoes a {
-  background-color: #E50914;
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
 
-.botoes a:hover {
-  background-color: #b00610;
-}
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
 
-footer {
-  text-align: center;
-  color: #666;
-  padding: 1rem;
-  border-top: 1px solid #333;
-  margin-top: 2rem;
-}
+    .botoes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+    }
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-}
+    .botoes a {
+      background-color: #E50914;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
 
+    .botoes a:hover {
+      background-color: #b00610;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 1rem;
+      border-top: 1px solid #333;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
-</head><body>
+</head>
+<body>
+
   <header>
-    <h1>Netflix Revenda Oficial</h1>
+    <h1>MZ TECH STORE Netflix Venda Oficial de Contas</h1>
     <p>Compre sua conta legal com entrega automática</p>
-  </header>  <img class="promo-img" src="https://assets.nflxext.com/ffe/siteui/vlv3/e34263f6-2e91-4ae3-888e-126032dfc77f/2e476f89-b6e4-4224-9a2a-214420d0f36d/MZ-en-20230731-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="Promo Netflix">  <section class="planos">
-    <h2>Planos Disponíveis</h2>
+  </header>
+
+  <!-- Destaque de Filme -->
+  <section class="planos">
+    <h2>Filme em Destaque</h2>
+    <img src="https://i.imgur.com/Zus7n1q.jpeg" alt="Filme Netflix em Destaque" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 0, 0, 0.5);"/>
+  </section>
+
+  <!-- Planos -->
+  <section class="planos">
+    <h2>Planos de Pagamento</h2>
     <div class="preco">
       <div class="card">
-        <h3>Premium</h3>
-        <p>Duração: 1 Mês</p>
-        <p class="valor">200MT</p>
+        <h3>Plano Básico</h3>
+        <p>Duração: 1 semana</p>
+        <p class="valor">130MT</p>
+        <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Básico+de+130MT" target="_blank" class="botoes-link">Comprar via WhatsApp</a>
       </div>
       <div class="card">
-        <h3>Ultra HD</h3>
+        <h3>Plano Premium</h3>
+        <p>Duração: 1 Mês</p>
+        <p class="valor">200MT</p>
+        <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Premium+de+200MT" target="_blank" class="botoes-link">Comprar via WhatsApp</a>
+      </div>
+      <div class="card">
+        <h3>Plano Ultra HD</h3>
         <p>Duração: 1 Mês</p>
         <p class="valor">400MT</p>
+        <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Ultra+HD+de+400MT" target="_blank" class="botoes-link">Comprar via WhatsApp</a>
       </div>
     </div>
-  </section>  <section class="galeria">
-    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/83e3ef122495301.60e4cbdf36ae6.jpg" alt="Poster Netflix 1">
-    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/2d4c91122495301.60e4cbe07b1a0.jpg" alt="Poster Netflix 2">
-    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/f645b1122495301.60e4cbe06058f.jpg" alt="Poster Netflix 3">
-    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/bc9e10122495301.60e4cbdfcad49.jpg" alt="Poster Netflix 4">
-  </section>  <section class="botoes">
+  </section>
+
+  <!-- Botões de Ação -->
+  <section class="botoes">
     <a href="https://wa.me/258848649797" target="_blank"><i class="fab fa-whatsapp"></i> Comprar via WhatsApp</a>
     <a href="mailto:netmovie450@gmail.com"><i class="fas fa-envelope"></i> Comprar via E-mail</a>
     <a href="https://www.netflix.com" target="_blank"><i class="fas fa-play"></i> Acessar Netflix Oficial</a>
     <a href="https://wa.me/258848649797?text=Quero+testar+uma+conta+grátis" target="_blank"><i class="fas fa-gift"></i> Teste Grátis da Conta</a>
-  </section>  <footer>
+  </section>
+
+  <footer>
     © 2025 Netflix Revenda Oficial — Todos os direitos reservados.
+    Desenvolvido por JR099
   </footer>
-</body></html>
+
+</body>
+</html>
