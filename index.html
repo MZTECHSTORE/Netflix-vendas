@@ -3,196 +3,465 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MZ TECH STORE Netflix venda Oficial de Contas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <title>MZ TECH STORE | Contas Netflix Oficiais</title>
+  
+  <!-- Fontes e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
-    body {
+    :root {
+      --primary: #E50914;
+      --primary-hover: #f40612;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #20ba5a;
+      --bg-dark: #141414;
+      --card-bg: #1f1f1f;
+      --card-border: #333;
+      --text-white: #ffffff;
+      --text-gray: #aaaaaa;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #000;
-      color: #fff;
+      padding: 0;
     }
 
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Hero Banner / Header */
     header {
+      position: relative;
+      padding: 4rem 1.5rem 3rem;
       text-align: center;
-      padding: 2rem;
+      background: radial-gradient(circle at top, rgba(229, 9, 20, 0.25) 0%, rgba(20, 20, 20, 1) 70%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    header h1 {
-      color: #E50914;
-      font-size: 3rem;
+    .logo-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--primary);
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(229, 9, 20, 0.2);
+      border: 1px solid var(--primary);
+      color: #ff4d4d;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Seção de Destaques */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 3rem 0 1.5rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    .promo-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .promo-img {
       width: 100%;
-      max-height: 400px;
+      height: auto;
+      max-height: 420px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 2rem;
+      display: block;
+      transition: transform 0.5s ease;
     }
 
-    .planos {
-      background-color: #1F1F1F;
-      border: 1px solid #E50914;
-      border-radius: 10px;
-      padding: 2rem;
-      margin: 2rem;
+    .promo-container:hover .promo-img {
+      transform: scale(1.02);
     }
 
-    .planos h2 {
-      color: #E50914;
-      margin-bottom: 1rem;
-    }
-
-    .preco {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background-color: #262626;
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 10px #000;
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
-    }
-
-    .card p {
-      margin: 0.5rem 0;
-    }
-
-    .card .valor {
-      color: #E50914;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    .botoes-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.2rem;
-      background-color: #E50914;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    .botoes-link:hover {
-      background-color: #b00610;
-    }
-
-    .galeria {
+    /* Vantagens / Diferenciais */
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-
-    .galeria img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-
-    .botoes {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 2rem;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    .botoes a {
-      background-color: #E50914;
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .botoes a:hover {
-      background-color: #b00610;
-    }
-
-    footer {
-      text-align: center;
-      color: #666;
-      padding: 1rem;
-      border-top: 1px solid #333;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+    .feature-item {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid var(--card-border);
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-item p {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+
+    /* Tabela de Planos */
+    .planos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card-plano {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      border: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-plano:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 30px rgba(229, 9, 20, 0.25);
+    }
+
+    /* Card em Destaque (Mais Popular) */
+    .card-plano.popular {
+      border: 2px solid var(--primary);
+      background: linear-gradient(180deg, rgba(229, 9, 20, 0.1) 0%, var(--card-bg) 100%);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: 0.3rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(229, 9, 20, 0.5);
+    }
+
+    .card-plano h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-plano .duracao {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-plano .valor {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-plano .valor span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-gray);
+    }
+
+    .recursos-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .recursos-list li {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .recursos-list li i {
+      color: var(--primary);
+    }
+
+    /* Botões */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
+      color: #fff;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-white);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #fff;
+    }
+
+    /* Botões de Ação Inferiores */
+    .botoes-extra {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin: 3rem 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-gray);
+      padding: 2rem 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--text-white);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .logo-title {
+        font-size: 1.8rem;
+      }
+
+      .card-plano.popular {
+        transform: none;
+      }
+      
+      .card-plano.popular:hover {
+        transform: translateY(-50px);
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Cabeçalho Principal -->
   <header>
-    <h1>MZ TECH STORE Netflix Venda Oficial de Contas</h1>
-    <p>Compre sua conta legal com entrega automática</p>
+    <span class="badge-top"><i class="fas fa-bolt"></i> Entrega Rápida & Garantida</span>
+    <h1 class="logo-title">MZ TECH STORE</h1>
+    <p>Assista a milhares de filmes e séries em Ultra HD sem interrupções. Escolha seu plano e comece hoje!</p>
   </header>
 
-  <!-- Destaque de Filme -->
-  <section class="planos">
-    <h2>Filmes e séries em Destaque</h2>
-    <img src="https://i.imgur.com/Zus7n1q.jpeg" alt="Filme Netflix em Destaque" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 0, 0, 0.5);"/>
-  </section>
+  <main class="container">
 
-  <!-- Planos -->
-  <section class="planos">
-    <h2>Planos de Pagamento</h2>
-    <div class="preco">
-      <div class="card">
-        <h3>Plano Básico</h3>
-        <p>Duração: 1 semana</p>
-        <p class="valor">130MT</p>
-        <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Básico+de+130MT" target="_blank" class="botoes-link">Comprar via WhatsApp</a>
+    <!-- Seção Banner / Destaque -->
+    <section>
+      <h2 class="section-title">Lançamentos em Destaque</h2>
+      <div class="promo-container">
+        <img src="https://i.imgur.com/Zus7n1q.jpeg" alt="Filmes e Séries em Destaque Netflix" class="promo-img"/>
       </div>
-      <div class="card">
-        <h3>Plano Premium</h3>
-        <p>Duração: 1 Mês</p>
-        <p class="valor">200MT</p>
-        <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Premium+de+200MT" target="_blank" class="botoes-link">Comprar via WhatsApp</a>
-      </div>
-      <div class="card">
-        <h3>Plano Ultra HD</h3>
-        <p>Duração: 1 Mês</p>
-        <p class="valor">400MT</p>
-        <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Ultra+HD+de+400MT" target="_blank" class="botoes-link">Comprar via WhatsApp</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Botões de Ação -->
-  <section class="botoes">
-    <a href="https://wa.me/258848649797" target="_blank"><i class="fab fa-whatsapp"></i> Comprar via WhatsApp</a>
-    <a href="mailto:netmovie450@gmail.com"><i class="fas fa-envelope"></i> Comprar via E-mail</a>
-    <a href="https://www.netflix.com" target="_blank"><i class="fas fa-play"></i> Acessar Netflix Oficial</a>
-    <a href="https://wa.me/258848649797?text=Quero+testar+uma+conta+grátis" target="_blank"><i class="fas fa-gift"></i> Teste Grátis da Conta</a>
-  </section>
+    <!-- Por que comprar conosco? -->
+    <section>
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="fas fa-rocket"></i>
+          <h4>Envio Imediato</h4>
+          <p>Receba seu acesso logo após a confirmação do pagamento.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Garantia Total</h4>
+          <p>Suporte dedicado durante todo o período da assinatura.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-tv"></i>
+          <h4>Alta Definição</h4>
+          <p>Qualidade Full HD e 4K Ultra HD sem travamentos.</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Seção de Planos -->
+    <section>
+      <h2 class="section-title">Escolha o seu Plano</h2>
+      
+      <div class="planos-grid">
+        
+        <!-- Plano Básico -->
+        <div class="card-plano">
+          <div>
+            <h3>Plano Semanal</h3>
+            <p class="duracao">Duração: 7 Dias</p>
+            <div class="valor">130 <span>MT</span></div>
+            
+            <ul class="recursos-list">
+              <li><i class="fas fa-check-circle"></i> Acesso Full HD</li>
+              <li><i class="fas fa-check-circle"></i> Suporte Completo</li>
+              <li><i class="fas fa-check-circle"></i> Funciona em Smart TV e Celular</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Semanal+de+130MT" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Comprar Agora
+          </a>
+        </div>
+
+        <!-- Plano Premium (Destaque) -->
+        <div class="card-plano popular">
+          <span class="popular-badge">Mais Vendido</span>
+          <div>
+            <h3>Plano Mensal</h3>
+            <p class="duracao">Duração: 30 Dias</p>
+            <div class="valor">200 <span>MT</span></div>
+            
+            <ul class="recursos-list">
+              <li><i class="fas fa-check-circle"></i> Qualidade Full HD</li>
+              <li><i class="fas fa-check-circle"></i> 1 Mês de Acesso Garantido</li>
+              <li><i class="fas fa-check-circle"></i> Suporte Prioritário 24/7</li>
+              <li><i class="fas fa-check-circle"></i> Melhor Custo-Benefício</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Mensal+de+200MT" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Comprar Agora
+          </a>
+        </div>
+
+        <!-- Plano Ultra HD -->
+        <div class="card-plano">
+          <div>
+            <h3>Plano Ultra HD</h3>
+            <p class="duracao">Duração: 30 Dias</p>
+            <div class="valor">400 <span>MT</span></div>
+            
+            <ul class="recursos-list">
+              <li><i class="fas fa-check-circle"></i> Qualidade 4K Ultra HD</li>
+              <li><i class="fas fa-check-circle"></i> Múltiplos Dispositivos</li>
+              <li><i class="fas fa-check-circle"></i> Som Spatial Audio</li>
+              <li><i class="fas fa-check-circle"></i> Suporte VIP Exclusivo</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/258848649797?text=Quero+comprar+o+Plano+Ultra+HD+de+400MT" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Comprar Agora
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Botões Complementares de Ação -->
+    <section class="botoes-extra">
+      <a href="https://wa.me/258848649797?text=Quero+testar+uma+conta+grátis" target="_blank" class="btn btn-primary">
+        <i class="fas fa-gift"></i> Solicitar Teste Grátis
+      </a>
+
+      <a href="mailto:netmovie450@gmail.com" class="btn btn-outline">
+        <i class="fas fa-envelope"></i> Contato via E-mail
+      </a>
+
+      <a href="https://www.netflix.com" target="_blank" class="btn btn-outline">
+        <i class="fas fa-play"></i> Site Netflix Oficial
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
   <footer>
-    © 2025 Netflix Revenda Oficial — Todos os direitos reservados.
-    Desenvolvido por JR099
+    <p>© 2025 <strong>MZ TECH STORE</strong> — Vendas e Suporte Netflix.</p>
+    <p style="margin-top: 0.3rem; font-size: 0.75rem;">Desenvolvido com excelência por <strong>JR099</strong></p>
   </footer>
 
 </body>
